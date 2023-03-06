@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/nes.css@2.3.0/css/nes.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <title>Whack-A-Mole</title>
+</head>
+
+<body>
+   
+    <header>
+        <div class="grid"></div>
+        <div class="lines"></div>
+        <h1>
+            <span>Whack-a-Mole</span>
+            <span>Whack-a-Mole</span>
+        </h1>
+
+    </header>
+ <div id="name-form">
+        <form id="player-form">
+            <label for="player-name">Entrez votre nom :</label>
+            <input type="text" id="player-name" name="player-name" required>
+            <button type="submit" style="--color:#1e9bff;">Commencer</button>
+        </form>
+    </div>
+    <main id="showme">
+
+        <div class="start-content">
+            <div id="welcome-message"></div>
+            <button id="start-button" style="--color:#1e9bff;">Start</button>
+            <div id="scoreboard">
+                <p>Vous avez : </p>
+                <span id="score">0</span> points
+                <p>Votre temps restant :</p>
+                <div id="timer">30</div>
+            </div>
+        </div>
+        <div id="game">
+            <div class="row">
+                <div class="hole"></div>
+                <div class="hole"></div>
+                <div class="hole"></div>
+            </div>
+            <div class="row">
+                <div class="hole"></div>
+                <div class="hole"></div>
+                <div class="hole"></div>
+            </div>
+            <div class="row">
+                <div class="hole"></div>
+                <div class="hole"></div>
+                <div class="hole"></div>
+            </div>
+        </div>
+
+    </main>
+    <footer>
+
+
+    </footer>
+
+
+
+</body>
+<script src="script.js"></script>
+
+</html>

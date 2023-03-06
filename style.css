@@ -1,0 +1,230 @@
+  @import url('https://fonts.googleapis.com/css2?family=Mr+Dafoe&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Exo:wght@900&display=swap');
+*, ::before, ::after {
+  margin: 0;padding: 0;box-sizing: border-box;
+}
+
+body {
+    cursor: url(./asset/trondisc.png), auto;
+    background-image: url(/asset/retro.jpg);
+  
+  }
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background: radial-gradient(rgba(118, 0, 191, 0.5) 0%, transparent 70%), linear-gradient(#0b161e 40%, #202076 70%);
+    perspective: 700px;
+    font-size: clamp(10px, 2vw, 20px);
+    overflow: hidden;
+ }
+
+#player-form {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin-left: 37%;
+  margin-top: 13%;
+  color: #fff;
+  width: 25%;
+}
+
+.lines {
+    position: fixed;
+    width: 100vw;
+    height: 4em;
+    background: linear-gradient(rgba(89, 193, 254, 0.2) 20%, #59c1fe 40%, #59c1fe 60%, rgba(89, 193, 254, 0.2) 80%);
+    background-size: 1px 0.5em;
+    box-shadow: 0 0 1em rgba(89, 193, 254, 0.4);
+    transform: translateY(-1em);
+    left: 0;
+ }
+  h1 {
+    position: relative;
+    font-family: 'Exo';
+    font-size: 9em;
+    margin: 0;
+    transform: skew(-15deg);
+    letter-spacing: 0.03em;
+ }
+  h1::after {
+    content: '';
+    position: absolute;
+    top: -0.1em;
+    right: 0.05em;
+    width: 0.4em;
+    height: 0.4em;
+    background: radial-gradient(white 3%, rgba(255, 255, 255, 0.3) 15%, rgba(255, 255, 255, 0.05) 60%, transparent 80%), radial-gradient(rgba(255, 255, 255, 0.2) 50%, transparent 60%) 50% 50% / 5% 100%, radial-gradient(rgba(255, 255, 255, 0.2) 50%, transparent 60%) 50% 50% / 70% 5%;
+    background-repeat: no-repeat;
+ }
+  h1 span:first-child {
+    display: block;
+    text-shadow: 0 0 0.1em #8ba2d0, 0 0 0.2em black, 0 0 5em #165ff3;
+    -webkit-text-stroke: 0.06em rgba(0, 0, 0, 0.5);
+ }
+  h1 span:last-child {
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-image: linear-gradient(#032d50 25%, #00a1ef 35%, white 50%, #20125f 50%, #8313e7 55%, #ff61af 75%);
+    -webkit-text-stroke: 0.01em #94a0b9;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+ }
+  h2 {
+    font-family: 'Mr Dafoe';
+    margin: 0;
+    font-size: 5.5em;
+    margin-top: -0.6em;
+    color: white;
+    text-shadow: 0 0 0.05em #fff, 0 0 0.2em #fe05e1, 0 0 0.3em #fe05e1;
+    transform: rotate(-7deg);
+ }
+  .grid {
+    background: linear-gradient(transparent 65%, rgba(46, 38, 255, 0.4) 75%, #7d41e6 80%, rgba(46, 38, 255, 0.4) 85%, transparent 95%), linear-gradient(90deg, transparent 65%, rgba(46, 38, 255, 0.4) 75%, #7d41e6 80%, rgba(46, 38, 255, 0.4) 85%, transparent 95%);
+    background-size: 30px 30px;
+    width: 200vw;
+    height: 300vh;
+    position: absolute;
+    bottom: -120vh;
+    transform: rotateX(-100deg);
+    -webkit-mask-image: linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 0) 80%);
+ }
+
+ main {
+ 
+   background-color: #112;
+    width: auto;
+    display: flex;
+    gap: 200px;
+    align-items: center;
+    justify-content: center;
+}
+#showme {
+  
+  visibility: hidden;
+}
+ .start-content {
+  display: flex;
+  flex-direction: column;
+
+ }
+button {
+  position: relative;
+  padding: 16px 30px;
+  font-size: 1.5rem;
+  color: var(--color);
+  border: 2px solid rgba(0, 0, 0, 0.5);
+  border-radius: 4px;
+  text-shadow: 0 0 15px var(--color);
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  transition: 0.5s;
+  z-index:1;
+}
+button:hover {
+  color: #fff;
+  border: 2px solid rgba(0,0,0,0);
+  box-shadow: 0 0 0 var(--color);
+}
+
+button::before {
+  content :"";
+  position: absolute;
+  top: 0;left: 0;
+  width: 100%;height: 100%;
+  background: var(--color);
+  z-index:-1;
+  transform: scale(0);
+  transition: 0.5s;
+}
+button:hover::before {
+transform: scale(1);
+transition-delay: 0.5s;
+box-shadow: 0 0 10px var(--color), 0 0 30px var(--color), 0 0 60px var(--color);
+}
+
+#welcome-message {
+  color: white;
+  text-align: center;
+}
+#game {
+    
+    display: flex;
+    flex-direction: column;
+    --border-size: 3px;
+    --border-angle: 0turn;
+    background-image: conic-gradient(from var(--border-angle), #213, #112 50%, #213), conic-gradient(from var(--border-angle), transparent 20%, #08f, #f03);
+    background-size: calc(100% - (var(--border-size) * 2)) calc(100% - (var(--border-size) * 2)), cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    animation: bg-spin 3s linear infinite;
+ }
+  @keyframes bg-spin {
+    to {
+      --border-angle: 1turn;
+   }
+ }
+  .box:hover {
+    animation-play-state: paused;
+ }
+  @property --border-angle {
+    syntax: "<angle>";
+    inherits: true;
+    initial-value: 0turn;
+ }
+  
+  .row {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .hole {
+    width: 200px;
+    height: 200px;
+    background-image: url(./asset/circle.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    /* cursor: pointer; */
+    margin: 10px;
+  }
+  
+  .hole.active {
+    background-image: url(./asset/mole.png);
+  }
+  
+  #scoreboard {
+    text-align: center;
+    font-size: 24px;
+    margin-top: 20px;
+  }
+  
+  #timer {
+    text-align: center;
+    font-size: 48px;
+    margin-top: 20px;
+  }
+  
+  button {
+    font-size: 24px;
+    margin-top: 20px;
+  }
+#scoreboard {
+  color: #fff;
+}
+#scoreboard span {
+  font-size: 2rem;
+}
+  footer {
+    background: #222;
+    background-image: repeating-linear-gradient(
+      to bottom,
+      transparent 7px,
+      rgba(0, 0, 0, 0.8) 9px,
+      rgba(0, 0, 0, 0.8) 13px,
+      transparent 13px
+    );
+    height: 141px;
+  }
